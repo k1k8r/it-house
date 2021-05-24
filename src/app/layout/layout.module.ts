@@ -8,7 +8,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    LayoutRoutingModule
-  ]
+    LayoutRoutingModule,
+  ],
 })
 export class LayoutModule { }

@@ -8,7 +8,7 @@ import { CoreRoutingModule } from './core-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    CoreRoutingModule
-  ]
+    CoreRoutingModule,
+  ],
 })
 export class CoreModule { }
