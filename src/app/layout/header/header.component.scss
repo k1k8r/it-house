@@ -8,6 +8,57 @@
   &-container {
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px;
+    align-items: center;
+    padding: 0 30px;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+
+    &__text {
+      font-size: 36px;
+      font-weight: 600;
+      color: #fff;
+      margin-left: 10px;
+    }
+  }
+
+  &-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    &__link {
+      font-size: 18px;
+      font-weight: 300;
+      color: #fff;
+      margin: 0 0 0 30px;
+
+      &:hover {
+        color: #7abfff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &-container {
+      padding: 10px 30px;
+    }
+
+    &-logo {
+      &__text {
+        display: none;
+      }
+    }
+
+    &-nav {
+      &__link {
+        margin: 0 0 0 10px;
+      }
+    }
   }
 }
