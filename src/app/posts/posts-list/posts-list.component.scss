@@ -1,0 +1,45 @@
+.posts {
+  margin-top: 70px;
+  padding: 40px 0;
+
+  &-container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  &-cards {
+    flex-basis: 20%;
+    background-color: #7ABFFF;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
+
+  &__button {
+    font-family: 'Fira Sans Extra Condensed';
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #0e5ea8;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 30px;
+  }
+}
