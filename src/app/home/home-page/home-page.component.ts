@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
+
   public title = 'Главная страница';
   private apiLoaded = false;
 
@@ -21,4 +22,5 @@ export class HomePageComponent implements OnInit {
       this.apiLoaded = true;
     }
   }
+
 }

@@ -6,8 +6,6 @@ import { pluck } from 'rxjs/operators';
 
 import { IPost } from '../interfaces/post.interface';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -21,6 +19,15 @@ export class PostsService {
     return this._http.get<IPost>(this._postsUrl)
       .pipe(
         pluck('posts'),
+      );
+  }
+
+  public getPost(id: number): Observable<IPost> {
+    const currentPostUrl = `${this._postsUrl}/${id}`;
+
+    return this._http.get<IPost>(currentPostUrl)
+      .pipe(
+        pluck('post'),
       );
   }
 

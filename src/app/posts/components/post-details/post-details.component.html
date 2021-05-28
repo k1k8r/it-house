@@ -1,0 +1,9 @@
+<title>{{title}}</title>
+<section class="post-details" *ngIf = 'post'>
+  <div class="post-details-container">
+    <h1 class="post-details__title">{{ post.title }}</h1>
+    <h2 class="post-details__subtitle">{{ post.description }}</h2>
+    <p class="post-details__content">{{ post.content }}</p>
+    <p class="post-details__date">{{ post.date | date }}</p>
+  </div>
+</section>

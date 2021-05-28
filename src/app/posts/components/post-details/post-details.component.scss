@@ -1,0 +1,38 @@
+.post-details {
+  margin-top: 90px;
+  padding: 60px 0 90px;
+
+  &-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 96px;
+    font-weight: 600;
+    color: #0e5ea8;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-size: 40px;
+    font-weight: 400;
+    color: #0e5ea8;
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    font-size: 36px;
+    font-weight: 300;
+    color: #0e5ea8;
+    text-align: justify;
+    margin-bottom: 30px;
+  }
+
+  &__date {
+    font-size: 24px;
+    font-weight: 400;
+    color: #0e5ea8;
+    text-align: right;
+  }
+}

@@ -11,7 +11,7 @@
   }
 
   &-cards {
-    flex-basis: 20%;
+    flex-basis: 25%;
     background-color: #7ABFFF;
     border-radius: 6px;
     padding: 20px;
@@ -33,11 +33,11 @@
   }
 
   &__button {
-    font-family: 'Fira Sans Extra Condensed';
     font-size: 20px;
     font-weight: 500;
     color: #ffffff;
     background-color: #0e5ea8;
+    cursor: pointer;
     border: none;
     border-radius: 6px;
     padding: 10px 30px;

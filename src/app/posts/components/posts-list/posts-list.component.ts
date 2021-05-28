@@ -3,8 +3,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { PostsService } from '../services/posts.service';
-import { IPost } from '../interfaces/post.interface';
+import { PostsService } from '../../services/posts.service';
+import { IPost } from '../../interfaces/post.interface';
 
 @Component({
   selector: 'app-posts-list',
@@ -13,6 +13,7 @@ import { IPost } from '../interfaces/post.interface';
 })
 export class PostsListComponent implements OnInit, OnDestroy {
 
+  public title = 'Новости';
   public posts: IPost[] = [];
 
   private readonly _$destroy = new Subject<void>();
@@ -23,17 +24,17 @@ export class PostsListComponent implements OnInit, OnDestroy {
     this._getPosts();
   }
 
+  public ngOnDestroy(): void {
+    this._$destroy.next();
+    this._$destroy.complete();
+  }
+
   private _getPosts(): void {
     this._postsService.getPosts()
       .pipe(
         takeUntil(this._$destroy),
       )
       .subscribe((posts) => this.posts = posts);
-  }
-
-  public ngOnDestroy(): void {
-    this._$destroy.next();
-    this._$destroy.complete();
   }
 
 }
