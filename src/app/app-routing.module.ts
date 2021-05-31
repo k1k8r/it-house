@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'posts',
     loadChildren: () => import('./posts').then((m) => m.PostsModule),
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth').then((m) => m.AuthModule),
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

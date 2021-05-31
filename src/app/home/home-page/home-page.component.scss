@@ -1,8 +1,6 @@
 .hero {
   position: relative;
-  background-image: url(../../../assets/img/home/hero/hero-background.png);
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url(../../../assets/img/home/hero/hero-background.png) center no-repeat;
   background-size: cover;
   margin-top: 70px;
   padding: 110px 0;
@@ -104,9 +102,7 @@
 }
 
 .media {
-  background-image: url(../../../assets/img/home/media/media-background.png);
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url(../../../assets/img/home/media/media-background.png) center no-repeat;
   background-size: cover;
   padding: 40px 0 80px;
 
