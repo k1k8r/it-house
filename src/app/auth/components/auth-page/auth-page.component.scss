@@ -1,0 +1,39 @@
+.auth {
+  &-container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 110px auto 50px;
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 600;
+    color: #0e5ea8;
+    margin: 30px 0 0;
+  }
+
+  &__info {
+    font-size: 36px;
+    font-weight: 300;
+    color: #0e5ea8;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+
+  &-buttons {
+
+    &__button {
+      font-size: 24px;
+      font-weight: 500;
+      color: #ffffff;
+      background-color: #0e5ea8;
+      border: none;
+      border-radius: 6px;
+      margin: 10px 0;
+      padding: 10px 20px;
+    }
+  }
+}

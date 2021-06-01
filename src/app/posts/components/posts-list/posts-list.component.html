@@ -1,10 +1,8 @@
-<title>{{title}}</title>
-<section class="posts">
-  <div class="posts-container">
-    <div class="posts-cards" *ngFor = "let post of posts">
-      <h2 class="posts__title">{{post.title}}</h2>
-      <p class="posts__description">{{post.description}}</p>
-      <button class="posts__button" routerLink="/posts/{{post.id}}">Подробнее</button>
-    </div>
+<title>Новости</title>
+<div class="posts-container">
+  <div class="posts-cards" *ngFor = "let post of posts">
+    <h2 class="posts__title">{{post.title}}</h2>
+    <p class="posts__description">{{post.description}}</p>
+    <button class="posts__button" routerLink="/posts/{{post.id}}">Подробнее</button>
   </div>
-</section>
+</div>

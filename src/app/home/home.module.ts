@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './component/home-page/home-page.component';
 
 @NgModule({
   declarations: [HomePageComponent],

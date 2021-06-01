@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { PostsListContainer } from './containers/post-list/posts-list.container';
 
 const routes: Routes = [
-  { path: '', component: PostsListComponent },
+  { path: '', component: PostsListContainer },
   { path: ':id', component: PostDetailsComponent },
 ];
 

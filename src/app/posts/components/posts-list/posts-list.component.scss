@@ -1,17 +1,15 @@
 .posts {
-  margin-top: 70px;
-  padding: 40px 0;
-
   &-container {
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 70px auto 0;
+    padding: 40px 0;
   }
 
   &-cards {
-    flex-basis: 25%;
+    flex-basis: 26.65%;
     background-color: #7ABFFF;
     border-radius: 6px;
     padding: 20px;

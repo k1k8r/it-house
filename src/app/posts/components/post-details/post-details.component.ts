@@ -15,12 +15,12 @@ import { IPost } from '../../interfaces/post.interface';
 export class PostDetailsComponent implements OnInit, OnDestroy {
 
   public title = 'Подробнее';
-  public post!: any;
+  public post!: IPost;
 
   private readonly _$destroy = new Subject<void>();
 
   constructor(
-    private _route: ActivatedRoute,
+    private _activatedRoute: ActivatedRoute,
     private _postsService: PostsService,
   ) {}
 
@@ -34,9 +34,9 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
   }
 
   private _getBook(): void {
-    const id = +this._route.snapshot.params.id;
+    const id = +this._activatedRoute.snapshot.params.id;
 
-    this._postsService.getPost(id)
+    this._postsService.get(id)
       .pipe(
         takeUntil(this._$destroy),
       )
