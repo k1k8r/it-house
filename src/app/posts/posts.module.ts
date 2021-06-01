@@ -5,6 +5,7 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { PostsListContainer } from './containers/post-list/posts-list.container';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { PostDetailsContainer } from './containers/post-details/post-details.container';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
     PostsListContainer,
     PostDetailsComponent,
     PostsListComponent,
+    PostDetailsContainer,
   ],
   imports: [
     CommonModule,

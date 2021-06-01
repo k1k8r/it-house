@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-import { Subject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 import { PostsService } from '../../services/posts.service';
@@ -18,9 +18,6 @@ export class PostsListContainer implements OnInit {
 
   constructor(private _postsService: PostsService) {
     this.posts$ = this._postsService.list();
-    // .pipe(
-    //   takeUntil(this._$destroy),
-    // );
   }
 
   public ngOnInit(): void {
