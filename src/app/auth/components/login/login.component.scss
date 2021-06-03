@@ -44,6 +44,10 @@
       border-radius: 3px;
       padding: 10px;
       margin-bottom: 20px;
+
+      &::placeholder {
+        color: #7ABFFF;
+      }
     }
 
     &-wrapper {

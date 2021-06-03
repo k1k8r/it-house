@@ -1,0 +1,81 @@
+.registration {
+  margin-top: 90px;
+
+  &-container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      font-size: 72px;
+      font-weight: 500;
+      color: #0e5ea8;
+      margin-bottom: 10px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      font-weight: 300;
+      color: #0e5ea8;
+      margin-bottom: 20px;
+    }
+
+    &__label {
+      font-size: 24px;
+      font-weight: 300;
+      color: #0e5ea8;
+      margin-bottom: 5px;
+    }
+
+    &__input {
+      font-size: 20px;
+      font-weight: 300;
+      color: #0e5ea8;
+      background-color: #EAEAEA;
+      border: 1px solid #7ABFFF;
+      border-radius: 3px;
+      padding: 10px;
+      margin-bottom: 20px;
+
+      &::placeholder {
+        color: #7ABFFF;
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__button {
+      font-size: 24px;
+      font-weight: 400;
+      color: #ffffff;
+      background-color: #0e5ea8;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      margin-right: 20px;
+      padding: 5px 40px;
+    }
+
+    &__extra {
+      font-size: 18px;
+      font-weight: 400;
+      color: #0e5ea8;
+    }
+
+    &__link {
+      color: #7ABFFF;
+      text-decoration: none;
+    }
+  }
+}

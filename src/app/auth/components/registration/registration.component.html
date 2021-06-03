@@ -1,1 +1,59 @@
-<p>registration works!</p>
+<title>Регистрация</title>
+<section class="registration">
+  <div class="registration-container">
+    <form class="registration-form">
+      <h1 class="registration-form__title">Регистрация</h1>
+      <p class="registration-form__subtitle">
+        Зарегестрируйтесь и начните полное погружение в наш проект.
+      </p>
+
+      <label class="registration-form__label" for="username"
+        >Имя пользователя</label
+      >
+      <input
+        id="username"
+        class="registration-form__input"
+        type="text"
+        placeholder="Username"
+      />
+
+      <label class="registration-form__label" for="email">Email</label>
+      <input
+        id="email"
+        class="registration-form__input"
+        type="email"
+        placeholder="Email"
+      />
+      <label class="registration-form__label" for="password">Пароль</label>
+      <input
+        id="password"
+        class="registration-form__input"
+        type="password"
+        placeholder="Ваш пароль"
+      />
+
+      <label class="registration-form__label" for="confirmPassword"
+        >Подтверждение пароля</label
+      >
+      <input
+        id="confirmPassword"
+        class="registration-form__input"
+        type="password"
+        placeholder="Повторите пароль"
+      />
+      <div class="registration-form-wrapper">
+        <button class="registration-form__button" type="submit">
+          Зарегестрироваться
+        </button>
+        <p class="registration-form__extra">
+          У вас уже есть аккаунт?
+          <a class="registration-form__link" routerLink="../signin">
+            Войдите в него <br />чтобы не пропустить последние новости.
+          </a>
+        </p>
+      </div>
+    </form>
+
+    <img src="/assets/img/home/info/info-logo.svg" alt="Logo" />
+  </div>
+</section>
