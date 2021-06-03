@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@300;400;500;600&display=swap");
 
 body {
-  font-family: "Fira Sans Extra Condensed";
+  font-family: "Fira Sans Extra Condensed", serif;
   margin: 0;
   padding: 0;
   h1,
@@ -14,5 +14,10 @@ body {
   ul {
     margin: 0;
     padding: 0;
+  }
+
+  button {
+    font-family: "Fira Sans Extra Condensed", serif;
+    cursor: pointer;
   }
 }

@@ -1,34 +1,39 @@
-<div class="login-container">
-  <h1 class="login__title">Авторизация</h1>
-  <p class="login__subtitle">
-    Войдите в свой аккаунт, чтобы пользоваться <br />всеми возможностями нашего
-    сайта.
-  </p>
-
-  <form class="login-form">
-    <label for="email">Email</label>
-    <input
-      id="email"
-      class="login-form__email"
-      type="email"
-      placeholder="example@cock.ru"
-    />
-
-    <label for="password">Пароль</label>
-    <input
-      id="password"
-      class="login-form__password"
-      type="password"
-      placeholder="💻-password"
-    />
-    <div class="login-form__wrapper">
-      <button class="login-form__button" type="submit">Войти</button>
-      <p class="login-form__link">
-        Вы здесь впервые?
-        <a routerLink="../signup">
-          Зарегестрируйтесь и продолжите знакомство с нами.
-        </a>
+<title>Авторизация</title>
+<section class="login">
+  <div class="login-container">
+    <form class="login-form">
+      <h1 class="login-form__title">Авторизация</h1>
+      <p class="login-form__subtitle">
+        Войдите в свой аккаунт, чтобы пользоваться <br />всеми возможностями нашего
+        сайта.
       </p>
-    </div>
-  </form>
-</div>
+
+      <label class="login-form__label" for="email">Email</label>
+      <input
+        id="email"
+        class="login-form__input"
+        type="email"
+        placeholder="example@cock.ru"
+      />
+
+      <label class="login-form__label" for="password">Пароль</label>
+      <input
+        id="password"
+        class="login-form__input"
+        type="password"
+        placeholder="password"
+      />
+      <div class="login-form-wrapper">
+        <button class="login-form__button" type="submit">Войти</button>
+        <p class="login-form__extra">
+          Вы здесь впервые?
+          <a class="login-form__link" routerLink="../signup">
+            Зарегестрируйтесь и <br>продолжите знакомство с нами.
+          </a>
+        </p>
+      </div>
+    </form>
+
+    <img src="../../../../assets/img/home/info/info-logo.svg" alt="Logo">
+  </div>
+</section>
