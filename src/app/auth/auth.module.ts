@@ -9,8 +9,8 @@ import { AuthPageComponent } from './components/auth-page/auth-page.component';
 
 @NgModule({
   declarations: [
-    RegistrationComponent,
     LoginComponent,
+    RegistrationComponent,
     AuthPageComponent,
   ],
   imports: [
