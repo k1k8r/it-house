@@ -1,7 +1,8 @@
 <title>Регистрация</title>
 <section class="registration">
   <div class="registration-container">
-    <form class="registration-form">
+
+    <form class="registration-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
       <h1 class="registration-form__title">Регистрация</h1>
       <p class="registration-form__subtitle">
         Зарегестрируйтесь и начните полное погружение в наш проект.
@@ -14,6 +15,7 @@
         id="username"
         class="registration-form__input"
         type="text"
+        formControlName="username"
         placeholder="Username"
       />
 
@@ -22,6 +24,7 @@
         id="email"
         class="registration-form__input"
         type="email"
+        formControlName="email"
         placeholder="Email"
       />
       <label class="registration-form__label" for="password">Пароль</label>
@@ -29,16 +32,18 @@
         id="password"
         class="registration-form__input"
         type="password"
+        formControlName="password"
         placeholder="Ваш пароль"
       />
 
-      <label class="registration-form__label" for="confirmPassword"
+      <label class="registration-form__label" for="password_repeat"
         >Подтверждение пароля</label
       >
       <input
-        id="confirmPassword"
+        id="password_repeat"
         class="registration-form__input"
         type="password"
+        formControlName="password_repeat"
         placeholder="Повторите пароль"
       />
       <div class="registration-form-wrapper">

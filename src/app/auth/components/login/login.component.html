@@ -1,7 +1,7 @@
 <title>Авторизация</title>
 <section class="login">
   <div class="login-container">
-    <form class="login-form">
+    <form class="login-form" [formGroup]="signInForm" (ngSubmit)="submit()">
       <h1 class="login-form__title">Авторизация</h1>
       <p class="login-form__subtitle">
         Войдите в свой аккаунт, чтобы пользоваться <br />всеми возможностями нашего
@@ -13,6 +13,7 @@
         id="email"
         class="login-form__input"
         type="email"
+        formControlName="email"
         placeholder="example@cock.ru"
       />
 
@@ -21,6 +22,7 @@
         id="password"
         class="login-form__input"
         type="password"
+        formControlName="password"
         placeholder="Ваш пароль"
       />
       <div class="login-form-wrapper">
