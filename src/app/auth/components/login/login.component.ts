@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-
-import { AuthService } from '../../services/auth.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,19 +8,20 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  @Output() public formData = new EventEmitter();
+
   public signInForm = this._formBuilder.group({
-    email: [''],
-    password: [''],
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
 
-  constructor(private _formBuilder: FormBuilder, private _authService: AuthService) { }
+  constructor(private _formBuilder: FormBuilder) { }
 
   public ngOnInit(): void {
   }
 
   public submit(): void {
-    this._authService.signIn(this.signInForm.value)
-      .subscribe((value) => localStorage.setItem('token', JSON.stringify(value)));
+    this.formData.emit(this.signInForm.value);
   }
 
 }

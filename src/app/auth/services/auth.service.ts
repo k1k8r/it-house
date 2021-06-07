@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { ISignUp } from '../interfaces/signup.interface';
 import { ISignIn } from '../interfaces/signin.interface';
+import { ISignUp } from '../interfaces/signup.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -16,12 +16,12 @@ export class AuthService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  public signUp(user: ISignUp): Observable<object> {
-    return this._httpClient.post(this._signUpLink, user);
-  }
-
   public signIn(user: ISignIn): Observable<object> {
     return this._httpClient.post(this._signInLink, user);
+  }
+
+  public signUp(user: ISignUp): Observable<object> {
+    return this._httpClient.post(this._signUpLink, user);
   }
 
 }

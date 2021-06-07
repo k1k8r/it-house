@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../../services/auth.service';
+import { ISignUp } from '../../interfaces/signup.interface';
+
 @Component({
   selector: 'app-registration-container',
   templateUrl: './registration.container.html',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationContainer implements OnInit {
 
-  constructor() { }
+  constructor(private _authService: AuthService) { }
 
   public ngOnInit(): void {
+  }
+
+  public submit(formData: ISignUp): void {
+    this._authService.signUp(formData)
+      .subscribe((token) => localStorage.setItem('token', JSON.stringify(token)));
   }
 
 }

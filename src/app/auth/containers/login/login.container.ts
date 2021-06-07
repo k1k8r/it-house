@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../../services/auth.service';
+import { ISignIn } from '../../interfaces/signin.interface';
+
 @Component({
-  selector: 'app-login',
+  selector: 'app-login-container',
   templateUrl: './login.container.html',
-  styleUrls: ['./login.container.scss']
+  styleUrls: ['./login.container.scss'],
 })
 export class LoginContainer implements OnInit {
 
-  constructor() { }
+  constructor(private _authService: AuthService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+  }
+
+  public submit(formData: ISignIn): void {
+    this._authService.signIn(formData)
+      .subscribe((value) => localStorage.setItem('token', JSON.stringify(value)));
   }
 
 }
