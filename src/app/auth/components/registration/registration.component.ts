@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -11,22 +12,27 @@ export class RegistrationComponent implements OnInit {
 
   @Output() public formData = new EventEmitter();
 
-  public signUpForm = this._formBuilder.group({
-    username: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
-    password_repeat: ['', Validators.required],
-  });
+  public signUpForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, private _router: Router) {
+  constructor(private _formBuilder: FormBuilder, private _authService: AuthService) {
   }
 
   public ngOnInit(): void {
+    this._createForm();
   }
 
   public submit(): void {
     this.formData.emit(this.signUpForm.value);
-    this._router.navigateByUrl('/home');
+    this._authService.back();
+  }
+
+  private _createForm(): void {
+    this.signUpForm = this._formBuilder.group({
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      password_repeat: ['', Validators.required],
+    });
   }
 
 }

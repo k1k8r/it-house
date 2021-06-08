@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NavigationEnd, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Observable } from 'rxjs';
-import { tap, pluck, mapTo } from 'rxjs/operators';
+import { pluck, mapTo, map } from 'rxjs/operators';
 
 import { ISignIn } from '../interfaces/signin.interface';
 import { ISignUp } from '../interfaces/signup.interface';
@@ -13,18 +15,30 @@ import { ISignUp } from '../interfaces/signup.interface';
 export class AuthService {
 
   public token: string | null = '';
+  private history: string[] = [];
   private readonly _signInLink = 'api/auth/signin/';
   private readonly _signUpLink = 'api/auth/signup/';
 
-  constructor(private _httpClient: HttpClient) {
+  constructor(
+    private _httpClient: HttpClient,
+    private _location: Location,
+    private _router: Router,
+    ) {
     this.token = localStorage.getItem('token');
+
+    this._router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          this.history.push(event.urlAfterRedirects);
+        }
+      });
   }
 
   public signIn(user: ISignIn): Observable<boolean> {
     return this._httpClient.post<{ token: string }>(this._signInLink, user)
       .pipe(
         pluck('token'),
-        tap((value) => {
+        map((value) => {
           this.token = value;
           localStorage.setItem('token', value);
         }),
@@ -36,7 +50,7 @@ export class AuthService {
     return this._httpClient.post<{ token: string }>(this._signUpLink, user)
       .pipe(
         pluck('token'),
-        tap((value) => {
+        map((value) => {
           this.token = value;
           localStorage.setItem('token', value);
         }),
@@ -46,6 +60,15 @@ export class AuthService {
 
   public isLoggedIn(): boolean {
     return !!this.token;
+  }
+
+  public back(): void {
+    this.history.pop();
+    if (this.history.length > 0) {
+      this._location.back();
+    } else {
+      this._router.navigateByUrl('/');
+    }
   }
 
 }

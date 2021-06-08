@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { LayoutModule } from './layout';
+import { EventsListComponent } from './events/components/events-list/events-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    EventsListComponent,
   ],
   imports: [
     BrowserModule,

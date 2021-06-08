@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./posts').then((m) => m.PostsModule),
   },
   {
+    path: 'events',
+    loadChildren: () => import('./events').then((m) => m.EventsModule),
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./auth').then((m) => m.AuthModule),
     canActivate: [IsNotLoggedInGuard],

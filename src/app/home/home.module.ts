@@ -7,6 +7,10 @@ import { HomePageComponent } from './component/home-page/home-page.component';
 
 @NgModule({
   declarations: [HomePageComponent],
-  imports: [CommonModule, YouTubePlayerModule, HomeRoutingModule],
+  imports: [
+    CommonModule,
+    YouTubePlayerModule,
+    HomeRoutingModule,
+  ],
 })
 export class HomeModule {}

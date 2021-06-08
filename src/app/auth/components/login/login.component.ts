@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,19 +12,26 @@ export class LoginComponent implements OnInit {
 
   @Output() public formData = new EventEmitter();
 
-  public signInForm = this._formBuilder.group({
-    email: ['', [Validators.required]],
-    password: ['', [Validators.required]],
-  });
+  public signInForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, private _router: Router) { }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _authService: AuthService,
+  ) {}
 
   public ngOnInit(): void {
+    this._createForm();
   }
 
   public submit(): void {
     this.formData.emit(this.signInForm.value);
-    this._router.navigateByUrl('/home');
+  }
+
+  private _createForm(): void {
+    this.signInForm = this._formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
 
 }
