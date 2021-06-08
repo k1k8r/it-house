@@ -16,7 +16,11 @@ export class IsNotLoggedInGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):
     Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    if (!this._authService.isLoggedIn()) {
+      return true;
+    }
+
+    return false;
   }
 
 }
