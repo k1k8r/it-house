@@ -17,7 +17,7 @@ export class RegistrationContainer implements OnInit {
 
   public submit(formData: ISignUp): void {
     this._authService.signUp(formData)
-      .subscribe((token) => localStorage.setItem('token', JSON.stringify(token)));
+      .subscribe((value) => console.log);
   }
 
 }

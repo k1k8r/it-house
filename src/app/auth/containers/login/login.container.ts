@@ -17,7 +17,7 @@ export class LoginContainer implements OnInit {
 
   public submit(formData: ISignIn): void {
     this._authService.signIn(formData)
-      .subscribe((value) => localStorage.setItem('token', JSON.stringify(value)));
+      .subscribe((value) => console.log);
   }
 
 }
