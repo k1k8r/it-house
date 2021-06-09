@@ -9,6 +9,7 @@ import { IPost } from '../../interfaces/post.interface';
 })
 export class PostsListComponent {
 
-  @Input() public posts!: IPost[] | null;
+  @Input()
+  public posts!: IPost[] | null;
 
 }

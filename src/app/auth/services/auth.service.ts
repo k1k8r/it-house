@@ -6,13 +6,16 @@ import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { pluck, mapTo, map } from 'rxjs/operators';
 
-import { ISignIn } from '../interfaces/signin.interface';
-import { ISignUp } from '../interfaces/signup.interface';
+import { ISignIn, ISignUp } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+
+  public get isLogged(): boolean {
+    return this.isLoggedIn();
+  }
 
   public token: string | null = '';
   private history: string[] = [];

@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { PostsService } from '../../services/posts.service';
 import { IPost } from '../../interfaces/post.interface';
 
-
 @Component({
   selector: 'app-posts-container',
   templateUrl: './posts-list.container.html',

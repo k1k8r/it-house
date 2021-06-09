@@ -8,10 +8,14 @@ import { PostsListContainer, PostDetailsContainer } from './containers';
 
 @NgModule({
   declarations: [
-    PostsListComponent,
-    PostDetailsComponent,
-    PostsListContainer,
-    PostDetailsContainer,
+    [
+      PostsListComponent,
+      PostDetailsComponent,
+    ],
+    [
+      PostsListContainer,
+      PostDetailsContainer,
+    ],
   ],
   imports: [
     CommonModule,

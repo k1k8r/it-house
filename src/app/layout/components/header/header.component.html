@@ -7,10 +7,15 @@
     <nav>
       <ul class="header-nav">
         <li><a class="header-nav__link" routerLink="/posts">Новости</a></li>
-        <li><a class="header-nav__link" routerLink="">Мероприятия</a></li>
-        <li><a class="header-nav__link" routerLink="">Поддержка</a></li>
-        <li><a class="header-nav__link" routerLink="">Обратная связь</a></li>
-        <li><a class="header-nav__link" routerLink="/auth">Профиль</a></li>
+        <li><a class="header-nav__link" routerLink="/events">Мероприятия</a></li>
+        <div class="header-wrapper" *ngIf="isLogged">
+          <li><a class="header-nav__link" routerLink="">Поддержка</a></li>
+          <li><a class="header-nav__link" routerLink="">Обратная связь</a></li>
+          <li><a class="header-nav__link" routerLink="">Профиль</a></li>
+        </div>
+        <div class="header-wrapper" *ngIf="!isLogged">
+          <li><a class="header-nav__link" routerLink="/auth">Станица авторизации</a></li>
+        </div>
       </ul>
     </nav>
   </div>
