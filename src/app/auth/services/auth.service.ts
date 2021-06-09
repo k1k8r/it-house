@@ -14,7 +14,7 @@ import { ISignIn, ISignUp } from '../interfaces';
 export class AuthService {
 
   public get isLogged(): boolean {
-    return this.isLoggedIn();
+    return !!this.token;
   }
 
   public token: string | null = '';
@@ -59,10 +59,6 @@ export class AuthService {
         }),
         mapTo(true),
       );
-  }
-
-  public isLoggedIn(): boolean {
-    return !!this.token;
   }
 
   public back(): void {
