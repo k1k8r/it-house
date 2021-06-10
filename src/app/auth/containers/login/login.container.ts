@@ -1,15 +1,15 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { AuthService } from '../../services/auth.service';
-import { ISignIn } from '../../interfaces/signin.interface';
+import { ISignIn } from '../../interfaces';
 
 @Component({
   selector: 'app-login-container',
   templateUrl: './login.container.html',
-  styleUrls: ['./login.container.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginContainer implements OnDestroy {
 

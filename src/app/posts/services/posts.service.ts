@@ -10,7 +10,7 @@ import { IPost } from '../interfaces/post.interface';
 })
 export class PostsService {
 
-  private readonly _postsUrl = 'api/posts';
+  private readonly _postsUrl = 'api/posts/';
 
   constructor(private readonly _httpClient: HttpClient) { }
 

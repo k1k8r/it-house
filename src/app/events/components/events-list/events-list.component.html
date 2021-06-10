@@ -1,1 +1,20 @@
-<p>events-list works!</p>
+<section class="events">
+  <div class="events-container">
+    <div class="events-cards" *ngFor="let event of events">
+      <div class="events-wrapper">
+        <div class="events-info">
+          <h1 class="events-info__name">{{event.name}}</h1>
+          <p class="events-info__description">{{event.description}}</p>
+          <div class="events-info-active">
+            <button class="events-info-active__button">Записаться</button>
+            <p class="events-info-active__date">
+              Дата начала: {{event.date_start | date: 'medium'}}<br>
+              Дата завершения: {{event.date_end | date: 'medium'}}
+            </p>
+          </div>
+        </div>
+        <img src="" alt="Event Photo">
+      </div>
+    </div>
+  </div>
+</section>

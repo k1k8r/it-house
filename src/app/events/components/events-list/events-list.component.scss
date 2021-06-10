@@ -1,0 +1,68 @@
+.events {
+  margin-top: 90px;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1582px;
+    padding: 20px 20px;
+  }
+
+  &-cards {
+    max-width: 900px;
+    background-color: #7abfff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-info {
+    &__name {
+      font-size: 50px;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    &__description {
+      max-width: 700px;
+      text-align: justify;
+      font-size: 20px;
+      font-weight: 300;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    &-active {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__button {
+        font-size: 24px;
+        font-weight: 600;
+        background-color: #0e5ea8;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 50px;
+      }
+
+      &__date {
+        text-align: end;
+        font-size: 20px;
+        font-weight: 300;
+        color: #ffffff;
+      }
+    }
+  }
+}

@@ -3,12 +3,9 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   RouterStateSnapshot,
-  UrlTree,
   Router,
   ActivatedRoute
 } from '@angular/router';
-
-import { Observable } from 'rxjs';
 
 import { AuthService } from '../services/auth.service';
 
@@ -25,9 +22,8 @@ export class IsLoggedInGuard implements CanActivate {
 
   public canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot):
-    Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this._authService.isLoggedIn()) {
+    state: RouterStateSnapshot): boolean {
+    if (this._authService.isLogged) {
       return true;
     }
     this._router.navigateByUrl('auth/signin');
