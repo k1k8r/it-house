@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { IsNotLoggedInGuard } from './auth/guards/is-not-logged-in.guard';
+import { IsLoggedInGuard } from './auth/guards/is-logged-in.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'events',
     loadChildren: () => import('./events').then((m) => m.EventsModule),
+  },
+  {
+    path: 'support',
+    loadChildren: () => import('./support').then((m) => m.SupportModule),
+    canActivate: [IsLoggedInGuard],
   },
   {
     path: 'auth',

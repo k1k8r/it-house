@@ -10,7 +10,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  @Output() public formData = new EventEmitter();
+  @Output()
+  public formData = new EventEmitter();
 
   public signUpForm!: FormGroup;
 
@@ -23,13 +24,12 @@ export class RegistrationComponent implements OnInit {
 
   public submit(): void {
     this.formData.emit(this.signUpForm.value);
-    this._authService.back();
   }
 
   private _createForm(): void {
     this.signUpForm = this._formBuilder.group({
       username: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required]],
       password: ['', Validators.required],
       password_repeat: ['', Validators.required],
     });
