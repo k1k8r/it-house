@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class SupportPageComponent implements OnInit {
 
   @Output()
-  public formData = new EventEmitter<any>();
+  public formData = new EventEmitter();
 
   public supportForm!: FormGroup;
 
@@ -30,7 +30,6 @@ export class SupportPageComponent implements OnInit {
       title: ['', [Validators.required]],
       content: ['', [Validators.required]],
       section: ['', [Validators.required]],
-      file: [File],
     });
   }
 
