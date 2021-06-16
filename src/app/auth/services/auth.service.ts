@@ -8,9 +8,7 @@ import { pluck, mapTo, map } from 'rxjs/operators';
 
 import { ISignIn, ISignUp } from '../interfaces';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
 
   public get isLogged(): boolean {

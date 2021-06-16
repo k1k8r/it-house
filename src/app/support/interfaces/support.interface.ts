@@ -3,6 +3,6 @@ import { ISection } from './section.intefrace';
 export interface ISupport {
   title: string;
   content: string;
-  section: ISection[];
+  section?: ISection[];
   file?: File;
 }

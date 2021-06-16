@@ -1,13 +1,12 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #0e5ea8;
-  border-bottom: 1px solid #ffffff;
-  z-index: 3;
-
   &-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 96%;
+    background-color: #0e5ea8;
+    border-bottom: 1px solid #ffffff;
+    z-index: 3;
     display: flex;
     justify-content: space-between;
     align-items: center;

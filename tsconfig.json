@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -10,10 +10,7 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "libs": [
-        "dist/libs/libs",
-        "dist/libs"
-      ]
+      "@guards/*": ["app/auth/guards/*"],
     },
     "declaration": false,
     "downlevelIteration": true,

@@ -1,4 +1,4 @@
-<header class="header" *ngIf="isLogged">
+<header class="header" *ngIf="isLogged; else unauthorized">
   <div class="header-container">
         <a class="header-logo" routerLink="/home">
           <img src="../../../../assets/img/header/header-logo.svg" alt="Logo" />
@@ -10,26 +10,26 @@
         <li><a class="header-nav__link" routerLink="/events">Мероприятия</a></li>
         <div class="header-wrapper">
           <li><a class="header-nav__link" routerLink="/support">Обратная связь</a></li>
-          <li><a class="header-nav__link" routerLink="">Профиль</a></li>
+          <li><a class="header-nav__link" routerLink="/profile">Профиль</a></li>
         </div>
       </ul>
     </nav>
   </div>
 </header>
 
-<header class="header" *ngIf="!isLogged">
-  <div class="header-container">
-    <a class="header-logo" routerLink="/home">
-      <img src="../../../../assets/img/header/header-logo.svg" alt="Logo" />
-      <h1 class="header-logo__text">IT-House</h1>
-    </a>
-    <nav>
-      <ul class="header-nav">
-        <li><a class="header-nav__link" routerLink="/posts">Новости</a></li>
-        <li><a class="header-nav__link" routerLink="/events">Мероприятия</a></li>
-          <li><a class="header-nav__link" routerLink="/auth">Станица авторизации</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<ng-template #unauthorized>
+    <div class="header-container">
+      <a class="header-logo" routerLink="/home">
+        <img src="../../../../assets/img/header/header-logo.svg" alt="Logo" />
+        <h1 class="header-logo__text">IT-House</h1>
+      </a>
+      <nav>
+        <ul class="header-nav">
+          <li><a class="header-nav__link" routerLink="/posts">Новости</a></li>
+          <li><a class="header-nav__link" routerLink="/events">Мероприятия</a></li>
+            <li><a class="header-nav__link" routerLink="/auth">Станица авторизации</a></li>
+        </ul>
+      </nav>
+    </div>
+</ng-template>
 
