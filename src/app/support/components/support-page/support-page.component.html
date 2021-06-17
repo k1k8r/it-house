@@ -38,11 +38,11 @@
         >
           <option value="" disabled>Выберите тип вашего запроса</option>
           <option *ngFor="let section of sectionOptions" [ngValue]="section">
-            {{ section.id }}
+            {{ section }}
           </option>
         </select>
         <label class="support-form__label" for="file">Опционально</label>
-<!--        <input id="file" class="support-form__file" type="file" />-->
+        <input id="file" class="support-form__file" type="file" (change)="onFileSelect($event)" />
 
         <button class="support-form__button" type="submit">Отправить</button>
 
