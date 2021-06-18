@@ -1,0 +1,6 @@
+<select class="support-form__input" id="section" [(ngModel)]="selectedValue" (ngModelChange)="updateOption()">
+  <option value="" disabled>Выберите тип вашего запроса</option>
+  <option *ngFor="let option of options">
+    {{ option[labelKey] }}
+  </option>
+</select>

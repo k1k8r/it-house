@@ -1,5 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+import { SupportService } from '../../services/support.service';
+import { ISection } from '../../interfaces/section.interface';
 
 @Component({
   selector: 'app-support-page',
@@ -8,13 +11,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class SupportPageComponent implements OnInit {
 
+  @Input()
+  public sections!: ISection[] | null;
+
   @Output()
   public formData = new EventEmitter();
 
   public supportForm!: FormGroup;
-  public sectionOptions: number[] = [1, 2, 3];
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(private _formBuilder: FormBuilder, private _supportService: SupportService) {
   }
 
   public ngOnInit(): void {
@@ -29,17 +34,7 @@ export class SupportPageComponent implements OnInit {
   }
 
   public submit(): void {
-    const formData = new FormData();
-    const title = this.supportForm.get('title')?.value;
-    const content = this.supportForm.get('content')?.value;
-    const section = this.supportForm.get('section')?.value;
-    const file = this.supportForm.get('file')?.value;
-
-    formData.append('title', title);
-    formData.append('content', content);
-    formData.append('section', section);
-    formData.append('file', file);
-    this.formData.emit(formData);
+    this.formData.emit(this.supportForm.value);
   }
 
   private _createForm(): void {
@@ -50,4 +45,5 @@ export class SupportPageComponent implements OnInit {
       file: [''],
     });
   }
+
 }
