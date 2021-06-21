@@ -16,7 +16,7 @@ body {
     padding: 0;
   }
 
-  button, input, input::placeholder {
+  button, input, input::placeholder, select, textarea, option {
     font-family: "Fira Sans Extra Condensed", serif;
     cursor: pointer;
   }

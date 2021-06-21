@@ -1,0 +1,92 @@
+.support {
+  margin-top: 90px;
+
+  &-hero {
+    position: relative;
+    background-image: url(/assets/img/support/hero/support-hero__background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 150px 0;
+    z-index: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(53, 53, 53, 0.3);
+      z-index: -2;
+    }
+
+    &__title {
+      text-align: center;
+      font-size: 50px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
+
+  &-wrapper {
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7abfff;
+    border-radius: 6px;
+    margin: 30px auto;
+    padding: 40px 100px;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+      font-size: 22px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    &__input {
+      font-size: 20px;
+      font-weight: 400;
+      color: #0e5ea8;
+      border: 1px solid #0e5ea8;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    &__file {
+      width: 350px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      margin: 5px auto 10px;
+
+      &::-webkit-file-upload-button {
+        font-family: "Fira Sans Extra Condensed", serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: #ffffff;
+        background-color: #0e5ea8;
+        border: none;
+      }
+    }
+
+    &__button {
+      font-size: 36px;
+      font-weight: 400;
+      color: #ffffff;
+      background-color: #0e5ea8;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+  }
+}

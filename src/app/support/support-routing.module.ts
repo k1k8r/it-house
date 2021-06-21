@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PostsListContainer, PostDetailsContainer } from './containers';
-
+import { SupportPageContainer } from './containers/support-page/support-page.container';
 
 const routes: Routes = [
-  { path: '', component: PostsListContainer },
-  { path: ':id', component: PostDetailsContainer },
+  { path: '', component: SupportPageContainer },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PostsRoutingModule { }
+export class SupportRoutingModule { }

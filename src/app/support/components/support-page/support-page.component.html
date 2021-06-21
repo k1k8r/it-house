@@ -1,0 +1,44 @@
+<title>Обратная связь</title>
+<section class="support">
+  <div class="support-container">
+    <div class="support-hero">
+      <p class="support-hero__title">
+        Если есть вопросы или различные <br />
+        предложения, оставьте свои контакты <br />
+        и мы обязательно с вами свяжемся.
+      </p>
+    </div>
+    <div class="support-wrapper">
+      <form
+        class="support-form"
+        [formGroup]="supportForm"
+        (ngSubmit)="submit()"
+      >
+        <label class="support-form__label" for="title">Название запроса</label>
+        <input
+          class="support-form__input"
+          formControlName="title"
+          id="title"
+          type="text"
+        />
+        <label class="support-form__label" for="content">Описание</label>
+        <textarea
+          class="support-form__input"
+          formControlName="content"
+          id="content"
+          cols="40"
+          rows="5"
+        >
+        </textarea>
+        <label class="support-form__label" for="section">Тип запроса</label>
+
+        <app-custom-select valueKey="id" labelKey="section" [options]="sections" formControlName="section"></app-custom-select>
+        <label class="support-form__label" for="file">Опционально</label>
+        <input id="file" class="support-form__file" type="file" (change)="onFileSelect($event)" />
+
+        <button class="support-form__button" type="submit">Отправить</button>
+
+      </form>
+    </div>
+  </div>
+</section>
