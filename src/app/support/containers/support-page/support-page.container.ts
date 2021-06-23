@@ -26,7 +26,6 @@ export class SupportPageContainer implements OnInit, OnDestroy {
     this._destroy$.complete();
   }
 
-
   public submit(formData: FormData): void {
     this._supportService.send(formData)
       .pipe(
@@ -38,5 +37,3 @@ export class SupportPageContainer implements OnInit, OnDestroy {
   private _list(): void {
     this.sections$ = this._supportService.list();
   }
-
-}
