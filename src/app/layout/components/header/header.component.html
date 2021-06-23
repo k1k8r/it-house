@@ -1,5 +1,5 @@
-<header class="header" *ngIf="isLogged; else unauthorized">
-  <div class="header-container">
+<header class="header">
+  <div class="header-container" *ngIf="isLogged; else unauthorized">
         <a class="header-logo" routerLink="/home">
           <img src="../../../../assets/img/header/header-logo.svg" alt="Logo" />
           <h1 class="header-logo__text">IT-House</h1>

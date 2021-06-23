@@ -28,8 +28,8 @@ export class RegistrationComponent implements OnInit {
 
   private _createForm(): void {
     this.signUpForm = this._formBuilder.group({
-      username: ['', [Validators.required]],
-      email: ['', [Validators.required]],
+      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
       password_repeat: ['', Validators.required],
     });

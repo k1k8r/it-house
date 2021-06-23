@@ -10,7 +10,7 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "@guards/*": ["app/auth/guards/*"],
+      "@auth/*": ["app/auth/*"],
     },
     "declaration": false,
     "downlevelIteration": true,

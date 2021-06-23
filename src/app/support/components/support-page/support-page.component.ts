@@ -35,6 +35,7 @@ export class SupportPageComponent implements OnInit {
 
   public submit(): void {
     this.formData.emit(this.supportForm.value);
+    this.supportForm.reset();
   }
 
   private _createForm(): void {

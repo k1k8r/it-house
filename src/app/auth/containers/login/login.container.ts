@@ -27,7 +27,7 @@ export class LoginContainer implements OnDestroy {
       .pipe(
         takeUntil(this._destroy$),
       )
-      .subscribe((value) => this._authService.back());
+      .subscribe(() => this._authService.back());
   }
 
 }

@@ -18,7 +18,7 @@ export class SupportPageContainer implements OnInit, OnDestroy {
   constructor(private _supportService: SupportService) {}
 
   public ngOnInit(): void {
-    this.list();
+    this._list();
   }
 
   public ngOnDestroy(): void {
@@ -26,9 +26,6 @@ export class SupportPageContainer implements OnInit, OnDestroy {
     this._destroy$.complete();
   }
 
-  public list(): void {
-    this.sections$ = this._supportService.list();
-  }
 
   public submit(formData: FormData): void {
     this._supportService.send(formData)
@@ -36,6 +33,10 @@ export class SupportPageContainer implements OnInit, OnDestroy {
         takeUntil(this._destroy$),
       )
       .subscribe(() => {});
+  }
+
+  private _list(): void {
+    this.sections$ = this._supportService.list();
   }
 
 }

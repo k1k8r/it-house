@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { IsLoggedInGuard } from "@guards/is-logged-in.guard";
-import { IsNotLoggedInGuard } from "@guards/is-not-logged-in.guard";
+import { IsLoggedInGuard, IsNotLoggedInGuard } from '@auth/guards';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home').then((m) => m.HomeModule),
-  },
   {
     path: 'posts',
     loadChildren: () => import('./posts').then((m) => m.PostsModule),
@@ -23,9 +18,18 @@ const routes: Routes = [
     canActivate: [IsLoggedInGuard],
   },
   {
+    path: 'profile',
+    loadChildren: () => import('./profile').then((m) => m.ProfileModule),
+    canActivate: [IsLoggedInGuard],
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./auth').then((m) => m.AuthModule),
     canActivate: [IsNotLoggedInGuard],
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home').then((m) => m.HomeModule),
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class CustomSelectComponent implements OnInit, ControlValueAccessor {
+export class CustomSelectComponent implements ControlValueAccessor {
 
   @Input()
   public options: any[] | null = [];
@@ -44,9 +44,6 @@ export class CustomSelectComponent implements OnInit, ControlValueAccessor {
   }
   public registerOnTouched(onTouch: () => void): void {
     this.touchFn = onTouch;
-  }
-
-  public ngOnInit(): void {
   }
 
   private changeFn = (_: any): void => {};
