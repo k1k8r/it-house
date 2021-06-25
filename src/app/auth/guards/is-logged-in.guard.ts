@@ -23,7 +23,7 @@ export class IsLoggedInGuard implements CanActivate {
   public canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    if (this._authService.isLogged) {
+    if (this._authService.isAuthorized) {
       return true;
     }
     this._router.navigateByUrl('auth/signin');

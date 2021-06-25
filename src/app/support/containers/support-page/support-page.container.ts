@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -9,6 +9,7 @@ import { ISection } from '../../interfaces/section.interface';
 @Component({
   selector: 'app-support-page-container',
   templateUrl: './support-page.container.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SupportPageContainer implements OnInit, OnDestroy {
 

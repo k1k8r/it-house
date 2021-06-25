@@ -20,6 +20,7 @@ import { IProfile } from '../../intefaces';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfilePageComponent implements OnInit, OnChanges {
+
   @Input()
   public profileData!: IProfile | null;
 

@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { LayoutModule } from './layout';
+import { NotImplementedPageComponent } from './not-implemented-page/not-implemented-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotImplementedPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@ export class IsNotLoggedInGuard implements CanActivate {
   public canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    return !this._authService.isLogged;
+    return !this._authService.isAuthorized;
   }
 
 }

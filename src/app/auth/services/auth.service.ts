@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Observable, Subject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { pluck, mapTo, map } from 'rxjs/operators';
 
 import { ISignIn, ISignUp } from '../interfaces';
@@ -11,13 +11,17 @@ import { ISignIn, ISignUp } from '../interfaces';
 @Injectable()
 export class AuthService {
 
-  public get isLogged(): boolean {
-    return !!this.token;
+  public get isLogged(): Observable<boolean> {
+    return this._isLoggedIn$;
   }
 
-  public token: string | null = '';
-  private _isLoggedIn$ = new Subject<boolean>();
-  private history: string[] = [];
+  public get isAuthorized(): boolean {
+    return !!this.authToken;
+  }
+
+  public authToken: string | null = '';
+  private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
+  private _history: string[] = [];
   private readonly _signInLink = 'api/auth/signin/';
   private readonly _signUpLink = 'api/auth/signup/';
 
@@ -26,13 +30,12 @@ export class AuthService {
     private _location: Location,
     private _router: Router,
     ) {
-    this.token = localStorage.getItem('token');
-    this._isLoggedIn$.next(true);
+    this.authToken = localStorage.getItem('token');
 
     this._router.events
       .subscribe((event) => {
         if (event instanceof NavigationEnd) {
-          this.history.push(event.urlAfterRedirects);
+          this._history.push(event.urlAfterRedirects);
         }
       });
   }
@@ -42,8 +45,9 @@ export class AuthService {
       .pipe(
         pluck('token'),
         map((value) => {
-          this.token = value;
+          this.authToken = value;
           localStorage.setItem('token', value);
+          this._isLoggedIn$.next(true);
         }),
         mapTo(true),
       );
@@ -54,24 +58,27 @@ export class AuthService {
       .pipe(
         pluck('token'),
         map((value) => {
-          this.token = value;
+          this.authToken = value;
           localStorage.setItem('token', value);
+          this._isLoggedIn$.next(true);
         }),
         mapTo(true),
       );
   }
 
   public logout(): void {
-    this.token = '';
+    this.authToken = '';
     localStorage.removeItem('token');
+    this._isLoggedIn$.next(false);
+    this._router.navigateByUrl('auth/signin');
   }
 
   public back(): void {
-    this.history.pop();
-    if (this.history.length > 0) {
+    this._history.pop();
+    if (this._history.length > 0) {
       this._location.back();
     } else {
-      this._router.navigateByUrl('/');
+      this._router.navigateByUrl('/home');
     }
   }
 

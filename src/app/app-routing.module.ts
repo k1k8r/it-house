@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { IsLoggedInGuard, IsNotLoggedInGuard } from '@auth/guards';
 
+import { NotImplementedPageComponent } from './not-implemented-page/not-implemented-page.component';
+
 const routes: Routes = [
   {
     path: 'posts',
@@ -32,6 +34,7 @@ const routes: Routes = [
     loadChildren: () => import('./home').then((m) => m.HomeModule),
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: NotImplementedPageComponent },
 ];
 
 @NgModule({
