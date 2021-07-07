@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { pluck, mapTo, map } from 'rxjs/operators';
 
 import { ISignIn, ISignUp } from '../interfaces';
@@ -16,6 +16,7 @@ export class AuthService {
   }
 
   public token: string | null = '';
+  private _isLoggedIn$ = new Subject<boolean>();
   private history: string[] = [];
   private readonly _signInLink = 'api/auth/signin/';
   private readonly _signUpLink = 'api/auth/signup/';
@@ -26,6 +27,7 @@ export class AuthService {
     private _router: Router,
     ) {
     this.token = localStorage.getItem('token');
+    this._isLoggedIn$.next(true);
 
     this._router.events
       .subscribe((event) => {
@@ -57,6 +59,11 @@ export class AuthService {
         }),
         mapTo(true),
       );
+  }
+
+  public logout(): void {
+    this.token = '';
+    localStorage.removeItem('token');
   }
 
   public back(): void {

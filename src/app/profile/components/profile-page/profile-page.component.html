@@ -1,0 +1,81 @@
+<title>Профиль</title>
+<section class="profile" *ngIf="profileData">
+  <div class="profile-container">
+    <div class="profile-wrapper">
+      <h1 class="profile__title">Добро пожаловать в IT-House, {{profileData.username}}!</h1>
+      <p class="profile__description">
+        Заполните информацию о себе и продолжите <br />изучение нашей площадки
+      </p>
+
+      <form class="profile-form" [formGroup]="profileForm" (ngSubmit)="submit()">
+          <label for="firstname" class="profile-form__label">Имя</label>
+          <input
+            id="firstname"
+            type="text"
+            class="profile-form__input"
+            placeholder="Ваше имя"
+            formControlName="firstname"
+          />
+          <label for="lastname" class="profile-form__label">Фамилия</label>
+          <input
+            id="lastname"
+            type="text"
+            class="profile-form__input"
+            placeholder="Ваша фамилия"
+            formControlName="lastname"
+          />
+          <label for="phone" class="profile-form__label">Телефон</label>
+          <input
+            id="phone"
+            type="text"
+            class="profile-form__input"
+            placeholder="Номер телефона"
+            formControlName="phone"
+          />
+          <label for="age" class="profile-form__label">Возраст</label>
+          <input
+            id="age"
+            type="text"
+            class="profile-form__input"
+            placeholder="Ваш возраст"
+            formControlName="age"
+          />
+          <label for="work_exp" class="profile-form__label">Опыт работы</label>
+          <input
+            id="work_exp"
+            type="text"
+            class="profile-form__input"
+            placeholder="Ваш опыт работы"
+            formControlName="work_exp"
+          />
+          <label for="knowledge" class="profile-form__label">Ваши знания</label>
+          <input
+            id="knowledge"
+            type="text"
+            class="profile-form__input"
+            placeholder="*HTML, CSS, etc..."
+            formControlName="knowledge"
+          />
+          <label for="role" class="profile-form__label"
+          >Уровень подготовки</label
+          >
+          <input
+            id="role"
+            type="text"
+            class="profile-form__input"
+            placeholder="Junior, Middle, Senior..."
+            formControlName="role"
+          />
+          <div class="profile-form-buttons">
+            <button class="profile-form__button" type="submit">
+              Обновить информацию
+            </button>
+            <button class="profile-form__logout" (click)="logout()">Выйти</button>
+          </div>
+      </form>
+
+      <h1 class="profile__title">Список ваших мероприятий</h1>
+      <div class="profile-events"></div>
+    </div>
+  </div>
+</section>
